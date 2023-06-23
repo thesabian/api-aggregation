@@ -1,0 +1,16 @@
+services:
+  backend-services:
+    platform: linux/amd64
+    container_name: backend-services
+    image: qwkz/backend-services
+    ports:
+      - 4000:4000
+
+  aggregation-service:
+    platform: linux/amd64
+    container_name: aggregation-service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
